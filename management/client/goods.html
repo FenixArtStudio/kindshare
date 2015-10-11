@@ -16,12 +16,20 @@
 				<span class="small">Location</span><br>
 				<h1>Toronto, Canada</h1>
 
+
 				<span class="small">Categories</span><br>
+				<div id="filterContainer">
 				{{#each filters}}
 				<div class="filter">
 					{{this}}
 				</div>
-				{{/each}}				
+				{{/each}}	
+					
+				</div>
+
+				<span class="small">Budget Available</span><br>
+				<h1>8-12 pickups</h1>
+
 			</div>
 			<div id="results" class="cell">
 				<div class="table list">
@@ -38,7 +46,7 @@
 						</div>
 						<div class="cell action">
 							<div class="button">
-								request
+								requested
 							</div>
 						</div>
 					</div>

@@ -169,7 +169,7 @@
 
 <template name="listTemplate">
 	<div class="row">
-		<div class="cell listTitle listItem">
+		<div class="cell listTitle listItem {{#if isInCart}}green{{/if}}">
 			{{title}}
 		</div>
 		<div class="cell listItem listStock">

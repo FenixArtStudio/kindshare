@@ -10,6 +10,18 @@ UI.registerHelper('iPhone', function(){
 		return false;
 })
 
+
+
+UI.registerHelper('isInCart', function(date){
+	if (Cart.find({"title": this.title}).count() >= 1){
+		return true;
+	}
+	else{
+		return false;
+	}
+})
+
+
 UI.registerHelper('isToday', function(date){
 	var date = new Date(date);
 	return moment(date).isSame(new Date(), 'day');
