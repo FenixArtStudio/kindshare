@@ -1,0 +1,459 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700italic,300,700);
+
+
+.scrollable {
+    -webkit-overflow-scrolling: touch;
+    overflow-y:auto;
+    overflow: scroll;
+}
+
+body{
+	padding:0;
+	margin:0;
+	padding-bottom: 80px;
+	font-family: 'Source Sans Pro', sans-serif;
+	.scrollable;
+	color:@base;
+}
+.sticky{
+    position:-webkit-sticky;
+    position:sticky;
+    top:0px;
+    z-index: 10;
+
+}
+
+#yieldContainer{
+	position: fixed;
+	top:0;
+	right:0;
+	left:45px;
+	bottom: 0;
+	.scrollable;
+	padding-bottom: 40px;
+}
+*{
+	backface-visibility: hidden  !important;
+      -webkit-backface-visibility: hidden !important;
+    -webkit-touch-callout: none !important;
+
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+
+}
+
+
+
+
+
+h1,h2,h3{
+	font-weight: 300;
+	padding:0;
+	margin:0;
+}
+
+a{
+	color: inherit;
+	padding: 0;
+	text-decoration: none;
+	margin: 0;
+}
+
+
+
+.super{
+	vertical-align: super;
+	.xxsmall;
+	display: inline-block;
+}
+.xxxlarge{
+	font-size:35px  !important;
+}
+.xxlarge{
+	font-size:26px  !important;
+}
+.xlarge{
+	font-size: 22px !important;;
+}
+.large{
+	font-size:19px  !important;
+
+}
+.medium{
+	font-size: 16px!important;
+}
+.small{
+	font-size:14px !important; 
+}
+.xsmall{
+	font-size:12px !important; 
+}
+.xxsmall{
+	font-size:10px !important; 
+}
+
+
+.table{
+	display: table;
+
+}
+.row{
+	display: table-row;
+}
+.cell{
+	display: table-cell;
+}
+.full{
+	width: 100%;
+
+}
+.fixed{
+	table-layout: fixed !important;
+}
+.strike{
+	text-decoration: line-through;
+}
+.center{
+	text-align: center !important;
+}
+
+
+
+
+
+
+@red:#CA3C25;
+@blue: #3E6990;
+@base: #6B6D76;
+@base2:#383D3B;
+@green: #4AAD52;
+@light: #f2f2f2;
+@lighter: #fafafa;
+
+.green{
+	color: @green !important;
+}
+.red{
+	color: @red !important;
+}
+.blue{
+	color: @blue !important;
+}
+
+
+
+
+
+
+
+.logo{
+	.xxlarge;
+	b{
+		color: @red;
+	}
+	text-align: center;
+	display: block;
+	margin:0 auto;
+}
+
+.flex_container_center{
+	 display: flex;
+	 -webkit-display: flex;
+
+	 flex-flow: column wrap;
+	 -webkit-flex-flow: column wrap;
+
+	 justify-content: center;
+	 -webkit-justify-content: center;
+
+
+	  align-items: center;
+	  -webkit-align-items: center;	
+}
+
+
+
+#login{
+	position: fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom: 0;
+	.flex_container_center;
+
+ 	#loginAsGuest{
+ 		color: @green;
+ 		padding: 15px;
+ 		cursor: pointer;
+ 	}
+
+}
+
+
+#navigationContainer{
+	position: fixed;
+	top:0;left:0;bottom:0;width:45px;
+	background: @light;
+	// color: white;
+
+	-webkit-box-shadow: 1px 0px 0px 1px fadeout(@base, 80%);
+	-moz-box-shadow: 1px 0px 0px 1px fadeout(@base, 80%);
+	box-shadow: 1px 0px 0px 1px fadeout(@base, 80%);
+
+	#navigationTable{
+		width: 100%;
+
+		.navItem{
+			cursor: pointer;
+			color:@base;
+			border-bottom: 1px solid fadeout(@base, 80%);
+			padding-top:15px;
+			padding-bottom: 15px;
+			text-align: center;
+			vertical-align: middle;
+
+			.xxlarge;
+		}
+	}
+}
+
+
+#home{
+	padding:20px;
+
+	h1{
+		text-align: center;
+
+	}	
+	.section{
+		background: fadeout(@light, 50%);
+		padding:15px;
+		margin-top:15px;
+		margin-bottom: 15px;
+
+	}
+	.button{
+		text-align: center;
+		text-transform: uppercase;
+		color:@green;
+		padding:7px;
+
+	}
+
+	#today{
+		background: @red;
+		color: white;
+		#meals{
+			width: 100%;
+			.cell{
+				vertical-align: middle;
+			}
+			.title{
+				width: 100px;
+				padding:15px;
+			}
+			.input{
+				input{
+					width: 50px;
+					.xlarge;
+					// padding:15px;
+				}
+			}
+		}
+	}
+	// #day{
+	// 	background: @blue !important;
+	// 	color: white !important;
+	// }
+
+	#reports{
+		background: none;
+		.cell{
+			border-bottom: 1px solid @light !important;
+			vertical-align: middle;
+		}
+		.row:last-child{
+			.cell{
+				border-bottom: none !important;
+			}
+		}
+	}
+
+
+	#urgent{
+		.cell{
+			// color: @red !important;
+		}
+		
+	}
+
+	#historic{
+		table-layout: fixed;
+		width: 100%;
+		border-spacing: 5px;
+		.cell{
+			padding: 6px;
+		}
+		.date{
+			// background: white;
+			text-align: center;
+
+			// padding:5px;
+		}
+		.title{
+			text-align: right;
+			font-weight: 300;
+		}
+		.data{
+			font-weight: 300;
+			.small;
+			text-align: center;
+		}
+
+		.current{
+
+			.cell{
+				background: white;
+			}
+		}
+
+	}
+}
+
+
+.list{
+	width: 95%;
+	margin-left:5%;
+	.row:last-child{
+		.cell{
+			border-bottom: none !important;
+		}
+	}
+	.title{
+		border-bottom: 1px solid white;
+		padding:8px;
+		text-transform: capitalize;
+	}
+	.input{
+		border-bottom: 1px solid white;
+		padding-bottom: 10px;
+		padding-top: 10px;
+		input{
+			text-align: center;
+			width: 90%;
+			padding:5px;
+			border:none;
+			.large;
+			color:@base;
+			margin:0 auto;
+		}
+	}
+	.term{
+		.xsmall;
+		text-align: center;
+		width: 90px;
+		padding:6px;
+		text-transform: uppercase;
+		border-bottom: 1px solid white;
+	}
+	.revenue{
+		border-bottom: 1px solid white;
+		width: 90px;
+		text-align: center;
+	}
+	.image{
+		width: 150px;
+		img{
+			max-width: 90%;
+			margin: 0 auto;
+			display: block;
+		}
+	}
+}
+
+
+#goods{
+
+	#goodsNav{
+		width: 400px;
+		border-spacing: 10px;
+		margin-bottom: 20px;
+		.cell{
+			text-align: center;
+			// padding: 6px;
+			padding-top:7px;
+			padding-bottom: 7px;
+			background: @light;
+		}
+		.active{
+			background: white;
+			color: @green;
+		}
+	}
+
+}
+
+#searchContainer{
+	width: 90%;
+	// max-width: 800px;
+	margin: 0 auto;
+
+	#searchNav{
+		width: 35%;
+		vertical-align: top;
+
+		h1{
+			margin-bottom: 15px;
+			padding-bottom: 5px;
+			border-bottom: 1px solid @light;
+		}
+		.filter{
+			display: inline-block;
+			padding:3px;
+			padding-left:10px;
+			padding-right:10px;
+			background: @light;
+			margin: 6px;
+			.small;
+			border-radius: 16px;
+		}
+	}
+	#results{
+		border-left: 1px solid @light;
+		vertical-align: top;
+
+		.list{
+			.cell{
+				padding:10px;
+				padding-top:20px;
+				padding-bottom: 20px;
+				border-bottom: 1px solid @light;
+			}
+			.image{
+
+			}
+			.details{
+				vertical-align: top;
+			}
+			.action{
+				.button{
+					border:1px solid @red;
+					border-radius: 16px;
+					padding:4px;
+					width: 90%;
+					margin: 0 auto;
+					text-align: center;
+					// font-weight: 300;
+					.small;
+					text-transform: uppercase;
+				}
+				vertical-align: middle;
+				color: @red;
+				width: 150px;
+				.request{}
+			}
+		}
+	}
+}
+

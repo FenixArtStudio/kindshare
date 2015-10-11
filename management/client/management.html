@@ -1,14 +1,71 @@
 <head>
-  <title>management</title>
+  <title>kindshare</title>
 </head>
 
-<body>
-  <h1>Welcome to Meteor!</h1>
+<template name="layout">
+	{{>yield region="navigation"}}
+	
+	<div id="yieldContainer">
+		{{>yield}}
+	</div>
+</template>
 
-  {{> hello}}
-</body>
+<template name="login">
+	<div id="login">
+		{{>logo}}
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+		<div id="loginAsGuest">Start Demo as Shelter / Food Bank</div>	
+
+	</div>
+</template>
+
+
+
+<template name="logo">
+	<div class="logo">
+		kind<b><i>share</i></b>
+	</div>
+</template>
+
+
+
+<template name="notFound">
+	<div id="notFound" class="verticalCenter">
+		{{>logo}}
+		page not found
+	</div>
+</template>
+
+
+<template name="loading">
+	<div id="loading">
+	<div class="icon">
+		<i class="ion-load-c"></i>
+	</div>
+		
+	</div>
+	
+</template>
+
+
+<template name="navigation">
+	<div id="navigationContainer">
+		<div id="navigationTable" class="table">
+<!-- 			<div class="row">
+				<div class="cell navItem ">
+					<i class="ion-ios-pulse"></i>
+				</div>
+			</div> -->
+			<div class="row">
+				<div id="foodPath" class="cell navItem {{isActiveRoute 'home'}}">
+					<i class="ion-android-restaurant"></i>
+				</div>
+			</div>
+			<div class="row">
+				<div id="goodsPath" class="cell navItem {{isActiveRoute 'goods'}}">
+					<i class="ion-tshirt"></i>
+				</div>
+			</div>
+		</div>
+	</div>
 </template>

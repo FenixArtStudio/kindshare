@@ -24,7 +24,7 @@ UI.registerHelper("date", function(dateType,date){
 	switch(dateType){
 		case "fullDate":
 		//console.log(date);
-			return moment(rawDate).format("DD MMM YYYY HH:MMa");
+			return moment().format("ddd DD MMM YYYY");
 		case "hoursMinutes":
 			return moment(rawDate).format("DD MMM");
 		case "time":
@@ -60,6 +60,21 @@ UI.registerHelper('lineBreak', function(text){
 
 
 
-  String.prototype.capitalize = function(lower) {
-      return (lower ? this.toLowerCase() : this).replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
-  };
+String.prototype.capitalize = function(lower) {
+  return (lower ? this.toLowerCase() : this).replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
+};
+
+UI.registerHelper("isActiveRoute", function(name){
+
+	var name = name.toLowerCase();
+	var routerName = Router.current().route.options.name.toLowerCase();
+
+	//console.log(routerName.match(name));
+
+	if (routerName.match(name) != null){
+		return "green";
+	}
+	else{
+		return;
+	}
+})

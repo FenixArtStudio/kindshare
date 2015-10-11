@@ -1,0 +1,190 @@
+<template name="completePurchase">
+<div id="completePurchase">
+	<div id="completePurchaseContent">
+		<h1>Your Donation</h1>
+
+		<div id="purchaseList" class="table list">
+		
+		{{#each cart}}
+			<div class="row">
+
+				<div class="cell price">
+					<span class="super">$</span>{{price}}
+				</div>
+				<div class="cell title">
+					{{title}}
+				</div>
+				<div id="deleteCartItem" class="cell icon">
+					<i class="ion-close-circled"></i>
+				</div>				
+			</div>
+		{{/each}}
+		</div>
+
+		<div id="buttonGroup" class="table">
+			<div class="row">
+				<div id="continueShopping" class="cell large">
+					Continue Shopping
+				</div>
+				<div class="cell small">
+					Confirm Payment With Card Ending With XX98
+				</div>
+				<div class="cell icon">
+					<i class="ion-ios-checkmark"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</template>
+<template name="shop">
+{{#if showCompletePurchase}}
+{{>completePurchase}}
+{{/if}}
+<div class="stats">
+	<div id="shopStats" class="table">
+		<div class="row">
+			<div class="cell title green">
+				Toronto Meal Reserves
+			</div>
+			<div class="cell status">
+				<div class="statusBar">
+					<div class="bar" style="width:60%"></div>
+					<div class="text">
+						43 Days
+					</div>
+				</div>
+			</div>
+		</div>
+<!-- 		<div class="row">
+			<div class="cell title green">
+				Meals Served (Week)
+			</div>
+			<div class="cell status green">
+				<div class="number">
+					12,103
+				</div>
+			</div>
+		</div> -->
+	</div>
+
+	<div id="cart" class="table">
+		{{#unless cart}}
+		<div class="row">
+<!-- 			<div class="cell icon">
+				<i class="ion-android-cart"></i>
+			</div> -->
+			<div class="cell text center red large">
+				<i class="ion-android-cart"></i>
+			</div>
+<!-- 			<div class="cell action">
+				
+			</div> -->
+		</div>
+		{{else}}
+			<div class="cell price">
+				<span class="super">$</span>{{cartTotal}}
+			</div>
+<!-- 			<div class="icon cell">
+				<i class="ion-android-cart"></i>
+			</div> -->
+			<div class="cell text">
+				{{cart.length}} Item(s) In Cart
+			</div>
+			<div class="cell action">
+				<div id="showCompletePurchase" class="button">
+					complete purchase
+				</div>
+			</div>
+		{{/unless}}
+	</div>
+</div>
+<!-- urgent items -->
+
+<h1 class="red shopTitle">Gift A Week Of</h1>
+
+<div id="quickBuyContainer">
+	<!-- <div id="quickBuyTitle">
+		Quick Buy
+	</div> -->
+	<div id="quickBuy" class=" table ">
+		<div class="row">
+			{{#each gifts}}
+			<div class="cell ">
+				<div class="button ">
+					<div class="title">{{title}}</div>
+					<div class="price"><span class="super">$</span>{{price}}</div>
+					
+					<div class="buy">
+						gift
+					</div>
+				</div>
+			</div>
+			{{/each}}
+		</div>
+	</div>
+	
+</div>
+
+
+
+<h1 class="red shopTitle"><span class="super">$</span>5 Essentials</h1>
+<div class="list table ">
+	{{#each normalList}}
+		{{>listTemplate}}
+	{{/each}}
+
+</div>
+
+
+
+
+<h1 class="blue shopTitle"><span class="super">$</span>10 Wish List</h1>
+<!-- regular list -->
+<div class="list table ">
+	{{#each wishList}}
+	<div class="row">
+		<div class="cell listTitle listItem">
+			{{title}}
+		</div>
+
+		<div class="cell listItem listExpanation">
+			<span class="small">Expected to last {{duration}} weeks</span>
+		</div>
+		<div class="cell listItem listAction">
+			<div class="circle">
+				<i class="ion-plus"></i>
+			</div>
+		</div>
+	</div>	
+	{{/each}}
+
+</div>
+
+
+
+</template>
+
+
+
+<template name="listTemplate">
+	<div class="row">
+		<div class="cell listTitle listItem">
+			{{title}}
+		</div>
+		<div class="cell listItem listStock">
+			<div class="stock">
+				{{stock}} day(s) stock remaining
+			</div>
+		</div>
+		<div class="cell listItem listNumber">
+			{{price}}<span class="super">units</span>
+		</div>
+		<div class="cell listItem listAction">
+			<div class="circle">
+				<i class="ion-plus"></i>
+			</div>
+		</div>
+	</div>
+</template>
+

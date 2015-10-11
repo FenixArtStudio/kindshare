@@ -1,0 +1,26 @@
+<template name="navigation">
+	<div id="navigationContainer">
+		<div id="navigationTable" class="table">
+			<div class="row">
+				<div id="homeNav" class="cell navItem {{isActiveRoute 'home'}}">
+					<i class="ion-android-restaurant"></i>
+					<div class="navTitle">
+						Food
+					</div>
+				</div>
+				<div id="goodsNav" class="cell navItem  {{isActiveRoute 'goods'}}">
+					<i class="ion-tshirt"></i>
+					<div class="navTitle">
+						Goods
+					</div>
+				</div>
+				<div id="profileNav" class="cell navItem  {{isActiveRoute 'profile'}}">
+					<i class="ion-person"></i>
+					<div class="navTitle">
+						Profile
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

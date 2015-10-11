@@ -63,3 +63,20 @@ UI.registerHelper('lineBreak', function(text){
   String.prototype.capitalize = function(lower) {
       return (lower ? this.toLowerCase() : this).replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
   };
+
+
+
+UI.registerHelper("isActiveRoute", function(name){
+
+	var name = name.toLowerCase();
+	var routerName = Router.current().route.options.name.toLowerCase();
+
+	//console.log(routerName.match(name));
+
+	if (routerName.match(name) != null){
+		return "green";
+	}
+	else{
+		return;
+	}
+})

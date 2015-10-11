@@ -25,3 +25,5 @@ momentjs:moment
 reactive-var
 velocityjs:velocityjs
 meteorhacks:subs-manager
+fastclick
+underscore

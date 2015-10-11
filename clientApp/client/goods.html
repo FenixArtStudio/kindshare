@@ -1,0 +1,84 @@
+<template name="goods">
+	<div id="requests" class="table">
+		<div class="row">
+			<div class="cell green">
+				<i class="ion-android-happy"></i><br>No Urgent Requests
+			</div>
+		</div>
+
+	</div>
+
+	<div id="upload">
+		<div class="row">
+			<div class="cell icon">
+				<i class="ion-images"></i>
+			</div>
+			<div class="cell text">
+				Upload photos of items you'd like to give away. Pickup will be arranged for any items claimed by participating not for profits.
+
+				<div class="buttonContainer">
+					Take Picture
+					<input id="uploadInput"  type="file" accept="image/*" capture="camera" />
+				</div>
+				
+				
+<!-- 
+				<div id="uploadImage" class="buy">
+					Start
+				</div> -->
+			</div>
+		</div>
+	</div>
+
+	
+	<div id="submissions">
+	<h1 class="blue">Your Donations</h1>
+		<div class="list table">
+<!-- 			<div class="row">
+				<div class="cell listTitle ">
+					Preview
+				</div>
+				<div class="cell listTitle">
+					Status
+				</div>
+				<div class="cell listTitle">
+					Pickup
+				</div>
+			</div> -->
+			{{#each items}}
+			<div class="row">
+				<div class="cell listTitle ">
+					<!-- {{title}} -->
+					<img src="/goods/{{image}}">
+				</div>
+				<div class="cell listTitle">
+
+					<span class="xsmall title">Details:</span><br>
+					{{title}}
+					<br>
+					<span class="xsmall title">Credits:</span><br>
+					<span class="green">$5</span>
+					<br>
+					<span class="xsmall title">Pickup:</span><br>
+					{{date 'fullDate' when}} <i class="ion-checkmark-circled green"></i>
+<!-- 					<br>
+					<span class="xsmall">Submitted:</span><br>
+					{{date 'timeFrom' when}}
+ -->
+
+				</div>
+				<div class="cell listTitle">
+					<div class="thanks">
+						<i class="ion-android-happy"></i>
+						<br>
+						Thank You
+					</div>					
+				</div>
+			</div>
+			{{/each}}
+		</div>
+
+	</div>
+
+
+</template>

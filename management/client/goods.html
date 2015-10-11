@@ -1,0 +1,70 @@
+<template name="goods">
+	<div id="goods">
+		<div id="goodsNav" class="table fixed">
+			<div class="row">
+				<div class="cell active">
+					Browse Uploads
+				</div>
+				<div class="cell">
+					Request Product
+				</div>
+			</div>
+		</div>
+
+		<div id="searchContainer" class="table">
+			<div id="searchNav" class="cell">
+				<span class="small">Location</span><br>
+				<h1>Toronto, Canada</h1>
+
+				<span class="small">Categories</span><br>
+				{{#each filters}}
+				<div class="filter">
+					{{this}}
+				</div>
+				{{/each}}				
+			</div>
+			<div id="results" class="cell">
+				<div class="table list">
+
+				{{#each goods}}
+					<div class="row">
+						<div class="cell image">
+							<img src="http://d15.local:3000/goods/{{image}}">
+						</div>
+						<div class="cell details">
+							<b>{{title}}</b>
+							<br>
+							Next available pickup from location: <b>5 days</b>
+						</div>
+						<div class="cell action">
+							<div class="button">
+								request
+							</div>
+						</div>
+					</div>
+				{{/each}}
+
+				{{#each goods}}
+					<div class="row">
+						<div class="cell image">
+							<img src="http://d15.local:3000/goods/{{image}}">
+						</div>
+						<div class="cell details">
+							<b>{{title}}</b>
+							<br>
+							Next available pickup from location: <b>5 days</b>
+						</div>
+						<div class="cell action">
+							<div class="button">
+								request
+							</div>
+						</div>
+					</div>
+				{{/each}}
+
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</template>
